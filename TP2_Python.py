@@ -9,3 +9,14 @@ elif age >= 18 and age < 42:
     print(f"Vous pouvez entrer vous êtes majeur vous avez {age} ans.")
 else:
     print("Félicitations, vous devenez le patron de la boîte de nuit !")
+
+#Question 2
+import random
+rand = random.randint(0, 30)
+
+response_dict = {
+    (0, 10): "Cool",
+    (11, 20): "Tepid",
+    (21, 30): "Warm"
+}
+

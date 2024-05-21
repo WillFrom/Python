@@ -103,3 +103,7 @@ elif age >= 18 and age < 42:
     print(f"Vous pouvez entrer vous êtes majeur vous avez {age} ans.")
 else:
     print("Félicitations, vous devenez le patron de la boîte de nuit !")
+
+#Question4
+
+

@@ -14,6 +14,15 @@ for table in tables:
 for idx, table in enumerate(tables):
     print(f"Table de {table}: {resultats[idx]}")
 
+#Autre méthode avec map()
+liste = [1, 2, 3, 5, 8]
+
+def myfunc(a) :
+    return [a * i for i in range (11)]
+
+result =list(map(myfunc, liste))
+print(result)
+
 #Question 2
 
 # Création de la liste de 1 à 10
@@ -35,7 +44,6 @@ for ligne in resultats_table_5:
 
 # Initialisation du compteur
 i = 1
-
 # Liste pour stocker les résultats sous forme de chaînes
 resultats_table_5 = []
 
@@ -47,7 +55,7 @@ while True:
     resultat_str = f"5 x {i} = {resultat}"
     # Ajout de la chaîne à la liste
     resultats_table_5.append(resultat_str)
-    # Affichage du résultat et incrémentation dans le print
+
     print(resultat_str)
     # Incrémentation du compteur
     i += 1
@@ -82,63 +90,55 @@ print(accumulateur)
 n = 5
 
 # Création du motif sur une seule ligne
-pattern = ""
+motif = ""
 
 # Boucle pour chaque groupe d'étoiles
 for i in range(1, n + 1):
     # Ajouter les étoiles pour chaque groupe
-    pattern += '*' * i
+    motif += '*' * i
     # Ajouter un espace après chaque groupe sauf le dernier
     if i < n:
-        pattern += ' '
+        motif += ' '
 
-print(pattern)
+print(motif)
+
+#Autre méthode avec map()
+print( ' ' .join(list(map(lambda x : x * "*" , range(1,6)))))
 
 #Question 6
 
-# Tableau à trier
-nbr = [5, 4, 3, 2, 1]
-
-# Implémentation du tri à bulle
-n = len(nbr)
-for i in range(n):
-    for j in range(0, n - i - 1):
-        if nbr[j] > nbr[j + 1]:
+def tri_bulles(nbr) :
+    n = len(nbr)
+    for i in range(n-1):
+        for j in range(0, n - i - 1):
+            if nbr[j] > nbr[j + 1]:
             # Échange des éléments
-            nbr[j], nbr[j + 1] = nbr[j + 1], nbr[j]
+               nbr[j], nbr[j + 1] = nbr[j + 1], nbr[j]
 
+nbr = [5, 4, 3, 2, 1]
+tri_bulles(nbr)
 print(nbr)
 
 #Question 7
 
 import datetime
 
-# Obtenir l'année actuelle
 annee_actuelle = datetime.datetime.now().year
 
-# Liste des années de 1980 à l'année actuelle
 annees = list(range(1980, annee_actuelle + 1))
 
 print(annees)
 
 #Question 8
-
-# Nombre de lignes
-n = 10
-
-# Boucle pour chaque ligne
-for i in range(1, n + 1):
-    # Afficher '1' répété i fois
+#10 lignes donc (1,10)
+for i in range(1, 10):
     print('1' * i)
 
 #Question 9
 
-# Nombre de lignes
-n = 10
-
-# Boucle pour chaque niveau
-for i in range(1, n + 1):
-    # Construire le motif pour chaque niveau
-    pattern = '[' * i + ' ' + ']' * i
-    # Centrer le motif en fonction du niveau le plus élevé
-    print(pattern.center(n * 3))
+# Boucle pour chaque ligne
+for i in range(1, 10):
+    # Construction du motif pour chaque ligne
+    motif = '[' * i + ' ' + ']' * i
+    # Center : pour centrer le motif
+    print(motif.center(10 * 3))

@@ -65,3 +65,5 @@ if(check_palindrome(var)):
     print("True") 
 else:
     print("False") 
+
+#Question 7

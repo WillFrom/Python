@@ -130,3 +130,15 @@ n = 10
 for i in range(1, n + 1):
     # Afficher '1' répété i fois
     print('1' * i)
+
+#Question 9
+
+# Nombre de lignes
+n = 10
+
+# Boucle pour chaque niveau
+for i in range(1, n + 1):
+    # Construire le motif pour chaque niveau
+    pattern = '[' * i + ' ' + ']' * i
+    # Centrer le motif en fonction du niveau le plus élevé
+    print(pattern.center(n * 3))

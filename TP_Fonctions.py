@@ -5,8 +5,8 @@ def myPutStr(valeur):
     if isinstance(valeur, (int, float)):
         return "et pourquoi pas 42 ?"
     # Sinon, retourner la valeur en string
-    else:
-        return valeur
+    
+    return valeur
     
 print(myPutStr('non'))
 
@@ -26,21 +26,32 @@ print(computeSurfaceM2(5,10))
 age = int(input("Entrez votre âge: "))
 
 def detectMyAgeByNight(age) :
-    if age < 18:
-       return print(f"Vous ne pouvez pas entrer vous n'êtes pas majeur vous avez {age} ans.")
-    elif age >= 18 and age < 42:
-       return print(f"Vous pouvez entrer vous êtes majeur vous avez {age} ans.")
-    else:
-       return print("Félicitations, vous devenez le patron de la boîte de nuit !")
+    if age >= 18 and age < 42:
+       return f"Vous pouvez entrer vous êtes majeur vous avez {age} ans."
+#Pas besoin d'écrire "else" lorsqu'il y a 2 return
+    return f"Vous ne pouvez pas entrer vous n'êtes pas majeur vous avez {age} ans."
 
 message = detectMyAgeByNight(age)
 print(message)
 
 #Question 4
 
-Data1 = [1 , 2 , 3.33]
-Data2 = [3 , 2 , 1]
-Data3 = [6.7 , 4 , 2]
+table =[
+    ["", "Test 1", "Test 2", "Test 3"],
+    ["Data1", "1" , "2" , "3.33"],
+    ["Data2", "3" , "2" , "1"],
+    ["Data3", "6.7" , "4" , "2"]]
+
+headers = ["", "", ""]
+
+def tableGenerator(table) :
+    for i, row in enumerate(table):
+        rowStr = ''
+        print(i,row)
+        for j, col in enumerate(row):
+            rowStr += f'|{col}'
+        if (not i) :
+            print(j,col)
 
 
 #Question 5
